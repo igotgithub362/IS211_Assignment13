@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <p>Students</p>
+    <ul class="students">
+    {% for student in students %}
+        <li>{{ student.ID }}, {{ student.last_name }}, {{ student.first_name }}, <a href="/student/{{ student.ID }}">View quiz results</a></li>
+    {% endfor %}
+    </ul>
+    <p>Quizzes</p>
+    <ul class="quizzes">
+    {% for quiz in quizzes %}
+        <li>{{ quiz.id }}, {{ quiz.subject }}, {{ quiz.num_questions }}, {{ quiz.quiz_date }}</li>
+    {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_student') }}">Add new student</a><br>
+    <br>
+    <a href="{{ url_for('add_quiz') }}">Add new quiz</a><br>
+    <br>
+    <a href="{{ url_for('add_result') }}">Add new result</a>
+</html>

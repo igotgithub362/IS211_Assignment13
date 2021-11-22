@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html lang="en">
+{% if message %}
+<p class="messge">{{ message }}{% endif %}
+<ul class="results">
+    {% for result in results %}
+        <li>{{ result.quiz_id }}, {{ result.score }}</li>
+    </ul>
+    {% endfor %}
+</html>

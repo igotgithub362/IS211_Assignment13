@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<form action="{{ url_for('add_result') }}" method="post">
+    <select name="quiz">
+        {% for quiz in quizzes %}
+        <option value="{{ quiz.ID }}">{{ quiz.ID }}</option>
+        {% endfor %}
+    </select>
+    <select name="student">
+        {% for student in students %}
+        <option value="{{ student.ID }}">{{ student.ID }}</option>
+        {% endfor %}
+    </select>
+    <input type="number" name="grade"><br>
+    <input type="submit" value="Submit">
+</form>
+</html>
